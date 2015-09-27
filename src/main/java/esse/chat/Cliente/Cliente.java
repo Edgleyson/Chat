@@ -1,0 +1,48 @@
+package esse.chat.Cliente;
+
+import esse.chat.modelo.Email;
+import esse.chat.modelo.Endereco;
+import esse.chat.modelo.Fone;
+import esse.chat.modelo.Instituicao;
+import esse.chat.persistencia.InstituicaoDAO;
+
+
+
+public class Cliente {
+    
+    public static void main(String[] args) throws Exception {
+        FabricaDeInstituicao fabrica = new FabricaDeInstituicao();
+        Instituicao instituicao = fabrica.criarInstituicao();
+        Endereco endereco = fabrica.criarEndereco();
+        Email email = fabrica.criarEmail();
+        Email email2 = fabrica.criarEmail2();
+        Fone fone1 = fabrica.criarFone();
+        Fone fone2 = fabrica.criarFone();
+        
+        instituicao.setEndereco(endereco);
+        instituicao.adicionaEmail(email);
+        instituicao.adicionaEmail(email2);
+        instituicao.adicionaFone(fone1);
+        instituicao.adicionaFone(fone2);
+        
+        Long newId = InstituicaoDAO.inserirInstituicao(instituicao);
+       
+//        String a = "1";
+//        Long id = Long.parseLong(a);
+        /*
+        Instituicao ins = InstituicaoDAO.pesquisarInstituicao(newId);
+        System.out.println(ins.toString());
+        
+        ins.setNome("UFPE");
+        InstituicaoDAO.atualizarInstituicao(ins);
+        
+        System.out.println(ins.toString());
+        
+        InstituicaoDAO.deletarInstituicao(ins);
+        */
+        
+
+    }
+    
+    
+}

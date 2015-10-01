@@ -2,6 +2,7 @@ package esse.chat.modelo;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -75,6 +76,28 @@ public class Curso implements Serializable {
             disciplinas.remove(disciplina);
         }
     }   
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Email)) {
+            return false;
+        }
+        final Curso other = (Curso) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        } else if (this.id == null && other.id == null) {
+            return this.nome.equals(other.nome);
+        }
+        
+        return true;
+    }
 
 
 

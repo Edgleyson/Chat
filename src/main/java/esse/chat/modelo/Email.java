@@ -23,17 +23,6 @@ public class Email implements Serializable {
     @Column(name="TXT_EMAIL")
     private String email;
     
-//    @ManyToOne(fetch=FetchType.LAZY, optional=false)
-//    private Instituicao instituicao;
-//
-//    public Instituicao getInstituicao() {
-//        return instituicao;
-//    }
-//
-//    public void setInstituicao(Instituicao instituicao) {
-//        this.instituicao = instituicao;
-//    }
-
     public Email() {
     }
     
@@ -62,7 +51,6 @@ public class Email implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Email)) {
             return false;
         }

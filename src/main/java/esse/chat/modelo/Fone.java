@@ -19,17 +19,6 @@ public class Fone implements Serializable {
     @Column(name="TXT_FONE")
     private String fone;
     
-//    @ManyToOne(cascade=CascadeType.ALL, optional=false)
-//    private Instituicao instituicao;
-//
-//    public Instituicao getInstituicao() {
-//        return instituicao;
-//    }
-//
-//    public void setInstituicao(Instituicao instituicao) {
-//        this.instituicao = instituicao;
-//    }
-
     public Fone() {
     }
 
@@ -41,19 +30,19 @@ public class Fone implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
     public String getFone() {
         return fone;
     }
 
     public void setFone(String fone) {
         this.fone = fone;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
     }
     
     @Override

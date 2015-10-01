@@ -52,29 +52,18 @@ public class SalaDeChat implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(this.id);
-        hash = 31 * hash + Objects.hashCode(this.descricao);
-        hash = 31 * hash + Objects.hashCode(this.disciplina);
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals(Object object) {
+        if (!(object instanceof SalaDeChat)) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final SalaDeChat other = (SalaDeChat) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.descricao, other.descricao)) {
-            return false;
-        }
-        if (!Objects.equals(this.disciplina, other.disciplina)) {
+        SalaDeChat other = (SalaDeChat) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;

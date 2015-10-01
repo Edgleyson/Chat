@@ -96,29 +96,18 @@ public class Disciplina implements Serializable {
         return hash;
     }
 
- 
-
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals(Object object) {
+        if (!(object instanceof Disciplina)) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        Disciplina other = (Disciplina) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
+        } else if (this.id == null && other.id == null) {
+            return this.nome.equals(other.nome);
         }
-        final Disciplina other = (Disciplina) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.nome, other.nome)) {
-            return false;
-        }
-        if (!Objects.equals(this.professor, other.professor)) {
-            return false;
-        }
-        if (!Objects.equals(this.alunos, other.alunos)) {
-            return false;
-        }
+        
         return true;
     }
 

@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -133,14 +134,16 @@ public class Instituicao implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Instituicao)) {
             return false;
         }
         Instituicao other = (Instituicao) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
+        }else if (this.id == null && other.id == null) {
+            return this.cnpj.equals(other.cnpj);
         }
+        
         return true;
     }
 

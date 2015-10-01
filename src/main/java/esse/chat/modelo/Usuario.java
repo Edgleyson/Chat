@@ -53,15 +53,15 @@ public abstract class Usuario implements Serializable {
     
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
-    private EnderecoUsuario endereco;
+    private Endereco endereco;
     
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
-    private List<EmailUsuario> emails;
+    private List<Email> emails;
     
     @OneToMany(fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
-    private List<FoneUsuario> fones;
+    private List<Fone> fones;
 
     public Long getId() {
         return id;
@@ -128,53 +128,53 @@ public abstract class Usuario implements Serializable {
         this.idade = idade;
     }
 
-    public EnderecoUsuario getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(EnderecoUsuario endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
-    public List<EmailUsuario> getEmails() {
+    public List<Email> getEmails() {
         return emails;
     }
 
-    public void setEmails(List<EmailUsuario> emails) {
+    public void setEmails(List<Email> emails) {
         this.emails = emails;
     }
     
-    public void adicionaEmail(EmailUsuario email){
+    public void adicionaEmail(Email email){
         if (!this.emails.contains(email))
             emails.add(email);
     }
     
-    public void removeEmail(EmailUsuario email){
+    public void removeEmail(Email email){
         if (emails != null) {
             emails.remove(email);
         }
     }      
 
-    public List<FoneUsuario> getFones() {
+    public List<Fone> getFones() {
         return fones;
     }
     
-    public void setFones(List<FoneUsuario> fones) {
+    public void setFones(List<Fone> fones) {
         this.fones = fones;
     }
     
-    public void adicionaFone(FoneUsuario fone){
+    public void adicionaFone(Fone fone){
         if (!this.fones.contains(fone))
             fones.add(fone);
     }
     
-    public void removeDisciplina(FoneUsuario fone){
+    public void removeDisciplina(Fone fone){
         if (fones != null) {
             fones.remove(fone);
         }
     } 
 
-    @Override
+@Override
     public int hashCode() {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
@@ -183,7 +183,6 @@ public abstract class Usuario implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Usuario)) {
             return false;
         }

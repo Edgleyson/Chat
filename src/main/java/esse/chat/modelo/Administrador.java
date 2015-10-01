@@ -31,7 +31,6 @@ public class Administrador extends Usuario implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Administrador)) {
             return false;
         }

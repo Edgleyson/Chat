@@ -57,11 +57,11 @@ public abstract class Usuario implements Serializable {
     
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
-    private List<Email> emails;
+    private Collection<Email> emails;
     
     @OneToMany(fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
-    private List<Fone> fones;
+    private Collection<Fone> fones;
 
     public Long getId() {
         return id;
@@ -136,12 +136,14 @@ public abstract class Usuario implements Serializable {
         this.endereco = endereco;
     }
 
-    public List<Email> getEmails() {
+    public Collection<Email> getEmails() {
         return emails;
     }
 
-    public void setEmails(List<Email> emails) {
-        this.emails = emails;
+    public void setEmails(Collection<Email> emails) {
+        for (Email email : emails) {
+            this.adicionaEmail(email);
+        }
     }
     
     public void adicionaEmail(Email email){
@@ -155,12 +157,14 @@ public abstract class Usuario implements Serializable {
         }
     }      
 
-    public List<Fone> getFones() {
+    public Collection<Fone> getFones() {
         return fones;
     }
     
-    public void setFones(List<Fone> fones) {
-        this.fones = fones;
+    public void setFones(Collection<Fone> fones) {
+        for (Fone fone : fones) {
+            this.adicionaFone(fone);
+        }
     }
     
     public void adicionaFone(Fone fone){
@@ -168,7 +172,7 @@ public abstract class Usuario implements Serializable {
             fones.add(fone);
     }
     
-    public void removeDisciplina(Fone fone){
+    public void removeFone(Fone fone){
         if (fones != null) {
             fones.remove(fone);
         }

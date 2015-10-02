@@ -2,7 +2,6 @@ package esse.chat.modelo;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -66,6 +65,16 @@ public class Curso implements Serializable {
         this.instituicao.adicionaCurso(this);
     }
     
+    public Collection<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+    
+    public void setAlunos(Collection<Disciplina> disciplinas) {
+        for (Disciplina disciplina : disciplinas) {
+            this.adicionaDisciplina(disciplina);
+        }
+    }
+    
     public void adicionaDisciplina(Disciplina disciplina){
         if (!this.disciplinas.contains(disciplina))
             disciplinas.add(disciplina);
@@ -99,18 +108,8 @@ public class Curso implements Serializable {
         return true;
     }
 
-
-
     @Override
     public String toString() {
         return "Curso{" + "id=" + id + ", nome=" + nome + "}";
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

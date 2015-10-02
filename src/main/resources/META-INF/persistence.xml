@@ -21,7 +21,7 @@
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/essedb"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="edde"/>
+      <property name="javax.persistence.jdbc.password" value="1234"/>
       <property name="eclipselink.logging.level" value="FINE"/>
       <property name="eclipselink.ddl-generation" value="none"/>
 <!--      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>

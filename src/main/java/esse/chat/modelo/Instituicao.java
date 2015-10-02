@@ -47,7 +47,7 @@ public class Instituicao implements Serializable {
     
     @OneToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
-    private List<Fone> fones = new ArrayList<>();
+    private Collection<Fone> fones = new ArrayList<>();
     
     @OneToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
@@ -88,7 +88,9 @@ public class Instituicao implements Serializable {
     }
 
     public void setCursos(Collection<Curso> cursos) {
-        this.cursos = cursos;
+        for (Curso curso : cursos) {
+            this.adicionaCurso(curso);
+        }
     }
     
     public void adicionaCurso(Curso curso){
@@ -102,6 +104,16 @@ public class Instituicao implements Serializable {
         }
     } 
     
+    public Collection<Email> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(Collection<Email> emails) {
+        for (Email email : emails) {
+            this.adicionaEmail(email);
+        }
+    }
+    
     public void adicionaEmail(Email email){
         if (!this.emails.contains(email)) {
             emails.add(email);
@@ -113,6 +125,16 @@ public class Instituicao implements Serializable {
             emails.remove(email);
         }
     } 
+    
+    public Collection<Fone> getFones() {
+        return fones;
+    }
+    
+    public void setFones(Collection<Fone> fones) {
+        for (Fone fone : fones) {
+            this.adicionaFone(fone);
+        }
+    }
     
     public void adicionaFone(Fone fone){
         if (!this.fones.contains(fone))

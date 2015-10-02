@@ -1,4 +1,3 @@
-
 package esse.chat.modelo;
 
 import java.io.Serializable;
@@ -9,10 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author Edgleyson
- */
+
 @Entity
 @Table(name="TB_EMAIL")
 public class Email implements Serializable {

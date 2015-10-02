@@ -61,10 +61,19 @@ public class Disciplina implements Serializable {
         return professor;
     }
 
-
     public void setProfessor(Professor professor) {
         this.professor = professor;
         this.professor.adicionaDisciplina(this);
+    }
+    
+    public Collection<Aluno> getAlunos() {
+        return alunos;
+    }
+    
+    public void setAlunos(Collection<Aluno> alunos) {
+        for (Aluno aluno : alunos) {
+            this.adicionaAluno(aluno);
+        }
     }
     
     public void adicionaAluno(Aluno aluno){
@@ -77,6 +86,16 @@ public class Disciplina implements Serializable {
             alunos.remove(aluno);
         }
     } 
+    
+    public Collection<Aluno> getMonitores() {
+        return monitores;
+    }
+    
+    public void setMonitores(Collection<Aluno> monitores) {
+        for (Aluno aluno : monitores) {
+            this.adicionaMonitor(aluno);
+        }
+    }
     
     public void adicionaMonitor(Aluno aluno){
         if (!this.alunos.contains(aluno))

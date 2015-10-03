@@ -1,6 +1,8 @@
 package esse.chat.modelo;
 
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Access;
@@ -120,12 +122,20 @@ public abstract class Usuario implements Serializable {
     }
 
     public int getIdade(Date nascimento) {
-        //escrever metodo para calcular
-        return idade;
-    }
+        Calendar dataNascimento = Calendar.getInstance();
+        dataNascimento.setTime(nascimento);
+        Calendar hoje = Calendar.getInstance();
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+        this.idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
+
+        if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
+            idade--;
+        } else {
+            if (hoje.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && hoje.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) {
+                idade--;
+            }
+        }
+        return idade;
     }
 
     public Endereco getEndereco() {

@@ -38,7 +38,9 @@ public abstract class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="TXT_NOME")
-    private String nome;
+    private String primeiroNome;
+    @Column(name="TXT_SOBRENOME")
+    private String ultimoNome;
     @Column(name="TXT_APELIDO")
     private String apelido;
     @Column(name="TXT_SEXO")
@@ -73,12 +75,20 @@ public abstract class Usuario implements Serializable {
         this.id = id;
     }
     
-    public String getNome() {
-        return nome;
+    public String getPrimeiroNome() {
+        return primeiroNome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setPrimeiroNome(String nome) {
+        this.primeiroNome = nome;
+    }
+    
+    public String getUltimoNome() {
+        return ultimoNome;
+    }
+
+    public void setUltimoNome(String nome) {
+        this.ultimoNome = nome;
     }
 
     public String getApelido() {
@@ -217,7 +227,7 @@ public abstract class Usuario implements Serializable {
         for (Object obj : emails) {  
            sb2.append(obj.toString()).append(" ");  
         } 
-        return "Usuario: " + "id=" + id + ", nome=" + nome + ", apelido=" + apelido +
+        return "Usuario: " + "id=" + id + ", nome=" + primeiroNome + " " + ultimoNome + ", apelido=" + apelido +
                 ", sexo=" + sexo + ", senha=" + senha + ", nascimento=" + nascimento + 
                 ", cpf=" + cpf + endereco.toString() + ", fone=" + sb.toString() +
                 ", email=" + sb2.toString();

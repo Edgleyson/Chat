@@ -13,6 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 
 @Entity
@@ -23,13 +26,15 @@ public class Curso implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
+    @Size ( max = 25)
     @Column (name = "TXT_NOME")
     private String nome;
     
     @ManyToOne(fetch = FetchType.LAZY, optional=false)
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
     private Instituicao instituicao;
-    
+    @Valid
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="TB_CURSO_DISCIPLINA", joinColumns={
         @JoinColumn(name="ID_CURSO")},

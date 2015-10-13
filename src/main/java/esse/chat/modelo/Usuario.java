@@ -1,6 +1,9 @@
 package esse.chat.modelo;
 
+import static esse.chat.modelo.Usuario_.cpf;
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Access;
@@ -23,6 +26,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 @Table(name="TB_USUARIO")
@@ -35,17 +45,35 @@ public abstract class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
+    @Size(max = 30)
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Primeira letra maiuscula")
     @Column(name="TXT_NOME")
-    private String nome;
+    private String primeiroNome;
+    @NotBlank
+    @Size(max = 30)
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Primeira letra maiuscula")
+    @Column(name="TXT_SOBRENOME")
+    private String ultimoNome;
+    @NotBlank
+    @Size (max = 10)
     @Column(name="TXT_APELIDO")
     private String apelido;
+    @NotBlank 
+    @Size (max = 9)
     @Column(name="TXT_SEXO")
     private String sexo;
+    @NotBlank 
+    @Size (min = 4, max = 6)
     @Column(name="TXT_SENHA")
     private String senha;
+    @NotNull
+    @Past
     @Column(name="DT_NASCIMENTO")
     @Temporal(TemporalType.DATE)
     private Date nascimento;
+    @NotNull
+    @CPF
     @Column(name="TXT_CPF")
     private String cpf;    
     @Transient
@@ -54,11 +82,11 @@ public abstract class Usuario implements Serializable {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
     private Endereco endereco;
-    
+    @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
     private Collection<Email> emails;
-    
+    @Valid
     @OneToMany(fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
     private Collection<Fone> fones;
@@ -71,12 +99,20 @@ public abstract class Usuario implements Serializable {
         this.id = id;
     }
     
-    public String getNome() {
-        return nome;
+    public String getPrimeiroNome() {
+        return primeiroNome;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.primeiroNome = nome;
+    }
+    
+    public String getUltimoNome() {
+        return ultimoNome;
+    }
+
+    public void setUltimoNome(String nome) {
+        this.ultimoNome = nome;
     }
 
     public String getApelido() {
@@ -120,12 +156,20 @@ public abstract class Usuario implements Serializable {
     }
 
     public int getIdade(Date nascimento) {
-        //escrever metodo para calcular
-        return idade;
-    }
+        Calendar dataNascimento = Calendar.getInstance();
+        dataNascimento.setTime(nascimento);
+        Calendar hoje = Calendar.getInstance();
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+        this.idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
+
+        if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
+            idade--;
+        } else {
+            if (hoje.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && hoje.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) {
+                idade--;
+            }
+        }
+        return idade;
     }
 
     public Endereco getEndereco() {
@@ -207,7 +251,7 @@ public abstract class Usuario implements Serializable {
         for (Object obj : emails) {  
            sb2.append(obj.toString()).append(" ");  
         } 
-        return "Usuario: " + "id=" + id + ", nome=" + nome + ", apelido=" + apelido +
+        return "Usuario: " + "id=" + id + ", nome=" + primeiroNome + " " + ultimoNome + ", apelido=" + apelido +
                 ", sexo=" + sexo + ", senha=" + senha + ", nascimento=" + nascimento + 
                 ", cpf=" + cpf + endereco.toString() + ", fone=" + sb.toString() +
                 ", email=" + sb2.toString();

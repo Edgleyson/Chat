@@ -10,7 +10,6 @@
     <class>esse.chat.modelo.Curso</class>
     <class>esse.chat.modelo.Disciplina</class>
     <class>esse.chat.modelo.SalaDeChat</class>
-    <class>esse.chat.modelo.Usuario</class>
     <class>esse.chat.modelo.Aluno</class>
     <class>esse.chat.modelo.Professor</class>
     <class>esse.chat.modelo.Administrador</class>
@@ -24,9 +23,9 @@
       <property name="javax.persistence.jdbc.password" value="1234"/>
       <property name="eclipselink.logging.level" value="FINE"/>
       <property name="eclipselink.ddl-generation" value="none"/>
-<!--      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <!--      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
-<!--      <property name="hibernate.dialect"
+      <!--      <property name="hibernate.dialect"
                 value="org.hibernate.dialect.MySQLDialect" />
       <property name="hibernate.hbm2ddl.auto" value="update" />
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

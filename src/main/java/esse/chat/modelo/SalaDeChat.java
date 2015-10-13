@@ -1,5 +1,6 @@
 package esse.chat.modelo;
 
+import com.sun.javafx.css.Size;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.*;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name="TB_SALA_DE_CHAT")
@@ -15,7 +18,9 @@ public class SalaDeChat implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;    
+    private Long id;
+    @NotBlank 
+    @Range (max = 60)
     @Column (name = "TXT_DESCRICAO")
     private String descricao;
     

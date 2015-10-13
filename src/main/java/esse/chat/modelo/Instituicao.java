@@ -16,6 +16,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 /**
  *
@@ -28,11 +33,14 @@ public class Instituicao implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank                                                   
+    @Size (max = 50)
     @Column(name="TXT_NOME")
     private String nome;
+    @NotNull
+    @CNPJ
     @Column(name="TXT_CNPJ")
     private String cnpj;
-    
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ID_ENDERECO", referencedColumnName = "ID")
     private Endereco endereco;
@@ -44,15 +52,15 @@ public class Instituicao implements Serializable {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
+    @Valid
     @OneToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
     private Collection<Fone> fones = new ArrayList<>();
-    
+    @Valid
     @OneToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
     private Collection<Email> emails = new ArrayList<>();
-    
+    @Valid
     @OneToMany(mappedBy="instituicao", fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
     private Collection<Curso> cursos = new ArrayList<>();
 

@@ -103,7 +103,11 @@ public abstract class Usuario implements Serializable {
         return primeiroNome;
     }
 
-    public void setNome(String nome) {
+
+   
+
+    public void setPrimeiroNome(String nome) {
+
         this.primeiroNome = nome;
     }
     
@@ -162,6 +166,7 @@ public abstract class Usuario implements Serializable {
 
         this.idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
 
+
         if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
             idade--;
         } else {
@@ -171,6 +176,8 @@ public abstract class Usuario implements Serializable {
         }
         return idade;
     }
+
+
 
     public Endereco getEndereco() {
         return endereco;
@@ -235,7 +242,7 @@ public abstract class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -255,6 +262,6 @@ public abstract class Usuario implements Serializable {
                 ", sexo=" + sexo + ", senha=" + senha + ", nascimento=" + nascimento + 
                 ", cpf=" + cpf + endereco.toString() + ", fone=" + sb.toString() +
                 ", email=" + sb2.toString();
-    }
+}
     
 }

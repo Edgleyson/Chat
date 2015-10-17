@@ -1,5 +1,6 @@
 package esse.chat.modelo;
 
+import esse.chat.controle.ValidaFone;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +20,8 @@ public class Fone implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size (min = 10, max = 11)
+    @ValidaFone
+    @Size (min = 14, max = 15)
     @Column(name="TXT_FONE")
     private String fone;
     

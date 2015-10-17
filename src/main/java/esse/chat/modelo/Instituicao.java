@@ -3,10 +3,8 @@ package esse.chat.modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,10 +20,6 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CNPJ;
 
-/**
- *
- * @author Edgleyson
- */
 @Entity
 @Table(name="TB_INSTITUICAO")
 public class Instituicao implements Serializable {
@@ -34,24 +28,21 @@ public class Instituicao implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank                                                   
-    @Size (max = 50)
+    @Size (max = 255)
     @Column(name="TXT_NOME")
     private String nome;
+    @NotNull
+    @Size (max = 10)
+    @Column(name="TXT_SIGLA")
+    private String sigla;
     @NotNull
     @CNPJ
     @Column(name="TXT_CNPJ")
     private String cnpj;
+    @Valid
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ID_ENDERECO", referencedColumnName = "ID")
     private Endereco endereco;
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
     @Valid
     @OneToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
@@ -82,6 +73,14 @@ public class Instituicao implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
+    public String getSigla() {
+        return sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
 
     public String getCnpj() {
         return cnpj;
@@ -89,6 +88,14 @@ public class Instituicao implements Serializable {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+    
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public Collection<Curso> getCursos() {
@@ -179,7 +186,7 @@ public class Instituicao implements Serializable {
 
     @Override
     public String toString() {
-        return "Instituicao{" + "id=" + id + ", nome=" + nome + ", cnpj=" + cnpj + '}';
+        return "Instituicao{" + "id=" + id + ", nome=" + nome + ", sigla=" + sigla + ", cnpj=" + cnpj + '}';
     }
 
         

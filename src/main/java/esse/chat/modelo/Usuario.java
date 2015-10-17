@@ -1,11 +1,10 @@
 package esse.chat.modelo;
 
-import static esse.chat.modelo.Usuario_.cpf;
+import esse.chat.controle.ValidaApelido;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
@@ -47,24 +46,26 @@ public abstract class Usuario implements Serializable {
     private Long id;
     @NotBlank
     @Size(max = 30)
-    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Primeira letra maiuscula")
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{esse.chat.Usuario.primeiroNome}")
     @Column(name="TXT_NOME")
     private String primeiroNome;
     @NotBlank
     @Size(max = 30)
-    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Primeira letra maiuscula")
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{esse.chat.Usuario.ultimoNome}")
     @Column(name="TXT_SOBRENOME")
     private String ultimoNome;
     @NotBlank
-    @Size (max = 10)
+    @ValidaApelido
+    @Size (min=3, max = 10)
     @Column(name="TXT_APELIDO")
     private String apelido;
     @NotBlank 
-    @Size (max = 9)
+    @Size (max = 1)
+    @Pattern(regexp = "(M|F)", message = "{esse.chat.Usuario.sexo}")
     @Column(name="TXT_SEXO")
     private String sexo;
     @NotBlank 
-    @Size (min = 4, max = 6)
+    @Size (min = 4, max = 10)
     @Column(name="TXT_SENHA")
     private String senha;
     @NotNull
@@ -78,7 +79,7 @@ public abstract class Usuario implements Serializable {
     private String cpf;    
     @Transient
     private int idade;
-    
+    @Valid
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
     private Endereco endereco;
@@ -102,9 +103,6 @@ public abstract class Usuario implements Serializable {
     public String getPrimeiroNome() {
         return primeiroNome;
     }
-
-
-   
 
     public void setPrimeiroNome(String nome) {
 

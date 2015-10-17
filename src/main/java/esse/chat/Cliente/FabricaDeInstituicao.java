@@ -30,7 +30,6 @@ public class FabricaDeInstituicao {
         end.setCep("50740-540");
         end.setCidade("Recife");
         end.setEstado("PE");
-        end.setPais("Brasil");
         return end;
 //        Endereco end = new Endereco();
 //        end.setLogradouro("Av. Prof. Morais Rego");
@@ -40,7 +39,6 @@ public class FabricaDeInstituicao {
 //        end.setCep("50670-901");
 //        end.setCidade("Recife");
 //        end.setEstado("PE");
-//        end.setPais("Brasil");
 //        return end;
     }
 

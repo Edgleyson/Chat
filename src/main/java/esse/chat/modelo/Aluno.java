@@ -22,7 +22,7 @@ public class Aluno extends Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    @Size(max = 15)
+    @Size(max = 20)
     @Column(name="TXT_MATRICULA")
     private String matricula;
 

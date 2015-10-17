@@ -1,4 +1,4 @@
-package esse.chat.modelo;
+package esse.chat.controle;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,7 +13,7 @@ import javax.validation.Payload;
 @Constraint(validatedBy = ValidadorEstado.class)
 @Documented
 public @interface ValidaEstado {
-    String message() default "{exemplo.jpa.Endereco.estado}";
+    String message() default "{esse.chat.modelo.Endereco.estado}";
 
     Class<?>[] groups() default {};
 

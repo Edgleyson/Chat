@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.*;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 
@@ -20,10 +21,10 @@ public class SalaDeChat implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank 
-    @Range (max = 60)
+    @Range (max = 255)
     @Column (name = "TXT_DESCRICAO")
     private String descricao;
-    
+    @Valid
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ID_SALA_DE_CHAT", referencedColumnName = "ID")
     private Disciplina disciplina;

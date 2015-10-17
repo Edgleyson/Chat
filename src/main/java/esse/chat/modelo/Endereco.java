@@ -1,5 +1,6 @@
 package esse.chat.modelo;
 
+import esse.chat.controle.ValidaEstado;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class Endereco implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    @Size(max = 150)
+    @Size(max = 255)
     @Column(name="TXT_LOGRADOURO")
     private String logradouro;
     @NotNull
@@ -31,19 +32,19 @@ public class Endereco implements Serializable {
     @Max(99999)
     @Column(name="TXT_NUMERO")
     private String numero;
-    @Size (max = 50) 
+    @Size (max = 150) 
     @Column(name="TXT_COMPLEMENTO")
     private String complemento;
     @NotBlank
     @Size (max = 150)
     @Column(name="TXT_BAIRRO")
     private String bairro;
-     @NotNull
-    @Pattern(regexp = "[0-90]{2}.[0-9]{3}-[0-9]{3}", message = "Cep Obrigatorio")
+    @NotNull
+    @Pattern(regexp = "[0-9]{5}-[0-9]{3}", message = "Cep Obrigatorio")
     @Column(name="TXT_CEP")
     private String cep;
     @NotBlank
-    @Size(max = 50)
+    @Size(max = 150)
     @Column(name="TXT_CIDADE")
     private String cidade;
     @NotBlank
@@ -51,10 +52,6 @@ public class Endereco implements Serializable {
     @Size(min = 2, max = 2)
     @Column(name="TXT_ESTADO")
     private String estado;
-    @NotBlank
-    @Size (max = 50)
-    @Column(name="TXT_PAIS")
-    private String pais;
 
     public Endereco() {
     }
@@ -123,13 +120,6 @@ public class Endereco implements Serializable {
         this.estado = estado;
     }
 
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
     
     @Override
     public int hashCode() {
@@ -152,7 +142,7 @@ public class Endereco implements Serializable {
 
     @Override
     public String toString() {
-        return "Endereço: "+  logradouro+", "+ numero+", "+ complemento+", "+bairro+", "+ cidade+"/"+ estado+"/"+pais + '}';
+        return "Endereço: "+  logradouro+", "+ numero+", "+ complemento+", "+bairro+", "+ cidade+"/"+ estado+ '}';
     }
     
     public Endereco(String l, String n, String comp, String b,String cep, String c, String e, String p){
@@ -163,6 +153,5 @@ public class Endereco implements Serializable {
         this.cep = l;
         this.cidade = c;
         this.estado = e;
-        this.pais = p;
     }
 }

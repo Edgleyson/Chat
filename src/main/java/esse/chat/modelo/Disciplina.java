@@ -2,15 +2,14 @@ package esse.chat.modelo;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.*;
 import javax.persistence.Table;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name="TB_DISCIPLINA")
@@ -20,11 +19,11 @@ public class Disciplina implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
-    @Size (max = 25)
+    @NotBlank
+    @Size (max = 255)
     @Column (name = "TXT_NOME")
     private String nome;    
-    
+    @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional=false)
     @JoinColumn(name="ID_DISCIPLINA", referencedColumnName="ID")
     private Professor professor;    

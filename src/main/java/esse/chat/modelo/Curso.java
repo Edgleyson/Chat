@@ -27,10 +27,10 @@ public class Curso implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    @Size ( max = 25)
+    @Size ( max = 255)
     @Column (name = "TXT_NOME")
     private String nome;
-    
+    @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional=false)
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
     private Instituicao instituicao;

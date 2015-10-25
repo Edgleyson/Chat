@@ -21,7 +21,7 @@ public class Fone implements Serializable {
     private Long id;
     @NotNull
     @ValidaFone
-    @Size (min = 14, max = 15)
+    @Size (min = 13, max = 14)
     @Column(name="TXT_FONE")
     private String fone;
     

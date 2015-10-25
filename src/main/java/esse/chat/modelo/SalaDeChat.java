@@ -25,8 +25,7 @@ public class SalaDeChat implements Serializable {
     @Column (name = "TXT_DESCRICAO")
     private String descricao;
     @Valid
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "ID_SALA_DE_CHAT", referencedColumnName = "ID")
+    @OneToOne(mappedBy="chat", optional = false)
     private Disciplina disciplina;
 
     public SalaDeChat() {

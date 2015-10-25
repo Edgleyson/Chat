@@ -1,6 +1,7 @@
 package esse.chat.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,18 +23,26 @@ public class Disciplina implements Serializable {
     @NotBlank
     @Size (max = 255)
     @Column (name = "TXT_NOME")
-    private String nome;    
+    private String nome;  
     @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional=false)
-    @JoinColumn(name="ID_DISCIPLINA", referencedColumnName="ID")
+    @JoinColumn(name="ID_CURSO", referencedColumnName="ID")
+    private Curso curso;
+    @Valid
+    @ManyToOne(fetch = FetchType.LAZY, optional=false)
+    @JoinColumn(name="ID_PROFESSOR", referencedColumnName="ID")
     private Professor professor;    
     @Valid
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="TB_DISCIPLINA_ALUNO", joinColumns={
         @JoinColumn(name="ID_DISCIPLINA")},
             inverseJoinColumns={
-                @JoinColumn(name="ID_ALUNO")})
-    private Collection<Aluno> alunos;    
+                @JoinColumn(name="ID_ALUNO")})    
+    private Collection<Aluno> alunos; 
+    @Valid
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "ID_SALA_CHAT", referencedColumnName = "ID")
+    private SalaDeChat chat;
     
     @Valid
     @ManyToMany(fetch = FetchType.LAZY)
@@ -44,6 +53,8 @@ public class Disciplina implements Serializable {
     private Collection<Aluno> monitores;
 
     public Disciplina() {
+        this.alunos = new ArrayList<>();
+        this.monitores = new ArrayList<>();
     }
     
     public Long getId() {
@@ -52,6 +63,14 @@ public class Disciplina implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public SalaDeChat getChat(){
+        return chat;
+    }
+    public void setChat(SalaDeChat chat){
+        this.chat = chat;
+        this.chat.setDisciplina(this);
     }
 
     public String getNome() {
@@ -71,6 +90,14 @@ public class Disciplina implements Serializable {
         this.professor.adicionaDisciplina(this);
     }
     
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+    
     public Collection<Aluno> getAlunos() {
         return alunos;
     }
@@ -83,12 +110,16 @@ public class Disciplina implements Serializable {
     
     public void adicionaAluno(Aluno aluno){
         if (!this.alunos.contains(aluno))
-            alunos.add(aluno);
+            if(aluno.adicionaDisciplina(this)){
+                alunos.add(aluno);
+            }
     }
     
     public void removeAluno(Aluno aluno){
         if (alunos != null) {
-            alunos.remove(aluno);
+            if(aluno.removeDisciplina(this)){
+                alunos.remove(aluno);
+            }
         }
     } 
     

@@ -1,6 +1,7 @@
 package esse.chat.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
@@ -30,6 +31,8 @@ public class Professor extends Usuario implements Serializable {
     private Collection<Disciplina> disciplinas;
 
     public Professor() {
+        super();
+        this.disciplinas = new ArrayList<>();
     }
     
     public Collection<Disciplina> getDisciplinas() {

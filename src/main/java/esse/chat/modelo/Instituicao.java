@@ -110,7 +110,8 @@ public class Instituicao implements Serializable {
     
     public void adicionaCurso(Curso curso){
         if (!this.cursos.contains(curso))
-            cursos.add(curso);
+            cursos.add(curso);            
+        curso.setInstituicao(this);
     }
     
     public void removeCurso(Curso curso){

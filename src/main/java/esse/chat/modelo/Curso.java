@@ -2,6 +2,7 @@ package esse.chat.modelo;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
@@ -35,11 +37,8 @@ public class Curso implements Serializable {
     @JoinColumn(name="ID_INSTITUICAO", referencedColumnName="ID")
     private Instituicao instituicao;
     @Valid
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name="TB_CURSO_DISCIPLINA", joinColumns={
-        @JoinColumn(name="ID_CURSO")},
-            inverseJoinColumns={
-                @JoinColumn(name="ID_DISCIPLINA")})
+    @OneToMany(mappedBy = "curso", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Disciplina> disciplinas;
 
     public Curso() {
@@ -67,7 +66,6 @@ public class Curso implements Serializable {
 
     public void setInstituicao(Instituicao instituicao) {
         this.instituicao = instituicao;
-        this.instituicao.adicionaCurso(this);
     }
     
     public Collection<Disciplina> getDisciplinas() {
@@ -83,6 +81,7 @@ public class Curso implements Serializable {
     public void adicionaDisciplina(Disciplina disciplina){
         if (!this.disciplinas.contains(disciplina))
             disciplinas.add(disciplina);
+        disciplina.setCurso(this);
     }
     
     public void removeDisciplina(Disciplina disciplina){

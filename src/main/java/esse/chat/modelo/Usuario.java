@@ -61,11 +61,13 @@ public abstract class Usuario implements Serializable {
     private String apelido;
     @NotBlank 
     @Size (max = 1)
-    @Pattern(regexp = "(M|F)", message = "{esse.chat.Usuario.sexo}")
+    @Pattern(regexp = "M|F", message = "{esse.chat.Usuario.sexo}")
     @Column(name="TXT_SEXO")
     private String sexo;
     @NotBlank 
     @Size (min = 4, max = 10)
+    @Pattern(regexp = "((?=.*\\p{Digit})(?=.*\\p{Lower})(?=.*\\p{Upper})(?=.*\\p{Punct}).{4,10})", 
+            message = "{esse.chat.Usuario.senha}")
     @Column(name="TXT_SENHA")
     private String senha;
     @NotNull
@@ -81,7 +83,7 @@ public abstract class Usuario implements Serializable {
     private int idade;
     @Valid
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
+    @JoinColumn(name = "ID_ENDERECO", referencedColumnName = "ID")
     private Endereco endereco;
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
@@ -183,6 +185,11 @@ public abstract class Usuario implements Serializable {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+    
+    public Endereco criarEndereco() {
+        this.setEndereco(new Endereco());
+        return getEndereco();
     }
 
     public Collection<Email> getEmails() {

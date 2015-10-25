@@ -20,6 +20,7 @@ public class Administrador extends Usuario implements Serializable {
     private Long id;
 
     public Administrador() {
+        super();
     }
 
     @Override

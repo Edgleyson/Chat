@@ -5,16 +5,17 @@ import java.util.regex.Pattern;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class ValidadorApelido implements ConstraintValidator<ValidaEstado, String> {
+public class ValidadorApelido implements ConstraintValidator<ValidaApelido, String> {
 
-    private Pattern pattern = 
-            Pattern.compile("[A-Z]{1}[a-z]{2,} || [A-Z]{1}[a-z]{2,}[0-9]*");
+    String padrao = "[A-Z]{1}[a-z]{2,}[0-9]*";
+
+    private Pattern pattern = Pattern.compile(padrao);
     //O apelido inicia com uma letra maiúscula seguida de duas ou mais letras minúsculas
     //Ex.: Ede - Edlas
-    //mas também pode admitir zero ou mais digitos no final. Ex: Edlas0000
+    //mas também pode admitir digito(s) no final. Ex: Edlas0000
     
     @Override
-    public void initialize(ValidaEstado constraintAnnotation) {
+    public void initialize(ValidaApelido constraintAnnotation) {
         
     }
 

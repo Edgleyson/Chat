@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>    
+	<!-- Endereco id = 1 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Av. Prof. Luis Freire" TXT_NUMERO = "500"  TXT_BAIRRO = "Cidade Universitária" TXT_CEP = "50740-540" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 2 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Av. Professor Morais Rego" TXT_NUMERO = "1235"  TXT_BAIRRO = "Cidade Universitária" TXT_CEP = "50670-901" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 3 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua da Guia" TXT_NUMERO = "100" TXT_COMPLEMENTO = "Casa B" TXT_BAIRRO = "Varzea" TXT_CEP = "50670-902" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 4 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua dos Esquecidos" TXT_NUMERO = "1000" TXT_COMPLEMENTO = "Casa Y" TXT_BAIRRO = "Caixa Prego" TXT_CEP = "50090-003" TXT_CIDADE = "Igarassu" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 5 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua Jose Ponciano" TXT_NUMERO = "197"  TXT_BAIRRO = "Jardim São Paulo" TXT_CEP = "50910-060" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 6 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua Elm" TXT_NUMERO = "666"  TXT_BAIRRO = "Zumbi" TXT_CEP = "50400-666" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 7 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua da Ladeira" TXT_NUMERO = "12" TXT_COMPLEMENTO = "Apt 301" TXT_BAIRRO = "Barro" TXT_CEP = "50978-900" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 8 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua dos Desavisados" TXT_NUMERO = "33" TXT_COMPLEMENTO = "1º Andar" TXT_BAIRRO = "Nova Descoberta" TXT_CEP = "50000-500" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 9 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Beco do Cipó" TXT_NUMERO = "24" TXT_COMPLEMENTO = "Fundos" TXT_BAIRRO = "Cobra Grande" TXT_CEP = "50040-024" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 10 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua das Meninas" TXT_NUMERO = "69"  TXT_BAIRRO = "Boa Vista" TXT_CEP = "50070-900" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 11 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua Iemanjá" TXT_NUMERO = "11"  TXT_BAIRRO = "Boa Viagem" TXT_CEP = "50100-800" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 12 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua Estrela da Morte" TXT_NUMERO = "100"  TXT_BAIRRO = "Bairro da Federação" TXT_CEP = "50000-500" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 13 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua do forró" TXT_NUMERO = "33"  TXT_BAIRRO = "Chão de Terra" TXT_CEP = "50030-960" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 14 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Av. da Consolação" TXT_NUMERO = "121"  TXT_BAIRRO = "Aflitos" TXT_CEP = "50700-930" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 15 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua um" TXT_NUMERO = "35"  TXT_BAIRRO = "Ibura" TXT_CEP = "50050-020" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 16 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Av. da Consolação" TXT_NUMERO = "121"  TXT_BAIRRO = "Aflitos" TXT_CEP = "50700-930" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 17 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua da Natividade" TXT_NUMERO = "99"  TXT_BAIRRO = "Afogados" TXT_CEP = "50040-220" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 18 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua Jota" TXT_NUMERO = "44" TXT_COMPLEMENTO = "Casa C" TXT_BAIRRO = "Pina" TXT_CEP = "50040-110" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 19 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua da Bola" TXT_NUMERO = "12"  TXT_BAIRRO = "UR-11" TXT_CEP = "50001-800" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 20 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua da Lama" TXT_NUMERO = "09"  TXT_BAIRRO = "Roda de Fogo" TXT_CEP = "50009-220" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 21 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Travessa do Bonfim" TXT_NUMERO = "42"  TXT_BAIRRO = "Santo Amaro" TXT_CEP = "50220-900" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 22 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Rua J" TXT_NUMERO = "34"  TXT_BAIRRO = "Santo Amaro" TXT_CEP = "50220-920" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	<!-- Endereco id = 23 --> 
+	<TB_ENDERECO TXT_LOGRADOURO = "Alameda das Alfaias" TXT_NUMERO = "222"  TXT_BAIRRO = "Torre" TXT_CEP = "50040-820" TXT_CIDADE = "Recife" TXT_ESTADO = "PE"/>
+	
+	<!-- Instituicao id = 1 -->    
+	<TB_INSTITUICAO TXT_CNPJ = "76.124.151/0001-13" TXT_NOME = "Instituto Federal de Pernambuco" TXT_SIGLA = "IFPE" ID_ENDERECO = "1"/>
+	<!-- Instituicao id = 2 -->    
+	<TB_INSTITUICAO TXT_CNPJ = "41.383.755/0001-08" TXT_NOME = "Universidade Federal de Pernambuco" TXT_SIGLA = "UFPE" ID_ENDERECO = "2"/>
+	
+	<!-- Usuario id = 1 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Edlas" TXT_SOBRENOME = "Oliveira" TXT_APELIDO = "Matusalem" TXT_SEXO = "M"
+				TXT_SENHA = "Edlas@123" DT_NASCIMENTO = "1966-03-04" TXT_CPF = "808.257.284-10"  ID_ENDERECO = "3"/>
+    <TB_ALUNO ID_USUARIO = "1" TXT_MATRICULA = "20132Y6-RC0367"/>
+	<!-- Usuario id = 2 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Saulo" TXT_SOBRENOME = "Dias" TXT_APELIDO = "Saulo" TXT_SEXO = "M"
+				TXT_SENHA = "S@ulo666" DT_NASCIMENTO = "1978-05-11" TXT_CPF = "932.837.515-01"  ID_ENDERECO = "4"/>        
+	<TB_ALUNO ID_USUARIO = "2" TXT_MATRICULA = "20132Y6-RC0368"/>
+	<!-- Usuario id = 3 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Edgleyson" TXT_SOBRENOME = "Araujo" TXT_APELIDO = "Edde" TXT_SEXO = "M"
+				TXT_SENHA = "Edde#1968" DT_NASCIMENTO = "1968-12-03" TXT_CPF = "085.580.046-17"  ID_ENDERECO = "5"/>           
+	<TB_ALUNO ID_USUARIO = "3" TXT_MATRICULA = "20132Y6-RC0162"/>
+	<!-- Usuario id = 4 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Igor" TXT_SOBRENOME = "Magalhaes" TXT_APELIDO = "Fredcrud" TXT_SEXO = "M"
+				TXT_SENHA = "FredCrud$7" DT_NASCIMENTO = "1982-06-25" TXT_CPF = "958.086.648-10"  ID_ENDERECO = "6"/>           
+	<TB_ALUNO ID_USUARIO = "4" TXT_MATRICULA = "20132Y6-RC0210"/>
+	<!-- Usuario id = 5 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Sergio" TXT_SOBRENOME = "Alencar" TXT_APELIDO = "Sergio" TXT_SEXO = "M"
+				TXT_SENHA = "Sergi@321" DT_NASCIMENTO = "1983-08-12" TXT_CPF = "252.457.454-70"  ID_ENDERECO = "7"/>          
+	<TB_ALUNO ID_USUARIO = "5" TXT_MATRICULA = "20132Y6-RC0321"/>
+	<!-- Usuario id = 6 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Iury" TXT_SOBRENOME = "Dryton" TXT_APELIDO = "Dryton" TXT_SEXO = "M"
+				TXT_SENHA = "Dry$1ury" DT_NASCIMENTO = "1990-08-20" TXT_CPF = "838.164.586-70"  ID_ENDERECO = "8"/>           
+	<TB_ALUNO ID_USUARIO = "6" TXT_MATRICULA = "20132Y6-RC0123"/>
+	<!-- Usuario id = 7 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Guilherme" TXT_SOBRENOME = "Santos" TXT_APELIDO = "Guiga" TXT_SEXO = "M"
+				TXT_SENHA = "Gu1$ky" DT_NASCIMENTO = "1995-01-31" TXT_CPF = "231.148.044-89"  ID_ENDERECO = "9"/>           
+	<TB_ALUNO ID_USUARIO = "7" TXT_MATRICULA = "20132Y6-RC0876"/>
+	<!-- Usuario id = 8 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Karina" TXT_SOBRENOME = "Sa" TXT_APELIDO = "Karina" TXT_SEXO = "F"
+				TXT_SENHA = "$aKar1na" DT_NASCIMENTO = "1993-02-14" TXT_CPF = "925.512.606-71"  ID_ENDERECO = "10"/>           
+	<TB_ALUNO ID_USUARIO = "8" TXT_MATRICULA = "20132Y6-RC0309"/>
+	<!-- Usuario id = 9 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Raphael" TXT_SOBRENOME = "Almeida" TXT_APELIDO = "Rapha" TXT_SEXO = "M"
+				TXT_SENHA = "Rap#a88" DT_NASCIMENTO = "1994-05-19" TXT_CPF = "026.605.218-59"  ID_ENDERECO = "11"/>         
+	<TB_ALUNO ID_USUARIO = "9" TXT_MATRICULA = "20132Y6-RC0567"/>	
+	<!-- Usuario id = 10 (professor) -->
+    <TB_USUARIO DISC_USUARIO = "PR" TXT_NOME = "Marcos" TXT_SOBRENOME = "Costa" TXT_APELIDO = "Vader" TXT_SEXO = "M"
+				TXT_SENHA = "M@rco$2000" DT_NASCIMENTO = "1976-05-20" TXT_CPF = "786.851.157-52"  ID_ENDERECO = "12"/>           
+	<TB_PROFESSOR ID_USUARIO = "10" />
+	<!-- Usuario id = 11 (professor) -->
+    <TB_USUARIO DISC_USUARIO = "PR" TXT_NOME = "Genival" TXT_SOBRENOME = "Santos" TXT_APELIDO = "Genial" TXT_SEXO = "M"
+				TXT_SENHA = "Gen1v@l" DT_NASCIMENTO = "1971-07-29" TXT_CPF = "113.795.963-00"  ID_ENDERECO = "13"/>        
+	<TB_PROFESSOR ID_USUARIO = "11" />
+	<!-- Usuario id = 12 (professor) -->
+    <TB_USUARIO DISC_USUARIO = "PR" TXT_NOME = "Aida" TXT_SOBRENOME = "Ferreira" TXT_APELIDO = "Aida" TXT_SEXO = "F"
+				TXT_SENHA = "A1d@IFPE" DT_NASCIMENTO = "1975-08-03" TXT_CPF = "444.542.732-27"  ID_ENDERECO = "14"/>     	
+	<TB_PROFESSOR ID_USUARIO = "12" />
+	<!-- Usuario id = 13 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Marcio" TXT_SOBRENOME = "Silva" TXT_APELIDO = "Marcio77" TXT_SEXO = "M"
+				TXT_SENHA = "M@arc10" DT_NASCIMENTO = "1990-05-19" TXT_CPF = "966.882.110-68"  ID_ENDERECO = "15"/>
+	<TB_ALUNO ID_USUARIO = "13" TXT_MATRICULA = "20132Y6-RC0331"/>
+	<!-- Usuario id = 14 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Arlindo" TXT_SOBRENOME = "Romano" TXT_APELIDO = "Arlindo8" TXT_SEXO = "M"
+				TXT_SENHA = "@Arl1nd0" DT_NASCIMENTO = "1992-03-02" TXT_CPF = "116.218;836-71"  ID_ENDERECO = "16"/>	
+	<TB_ALUNO ID_USUARIO = "14" TXT_MATRICULA = "20132Y6-RC0333"/>
+	<!-- Usuario id = 15 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Sandra" TXT_SOBRENOME = "Passarinho" TXT_APELIDO = "Sandra25" TXT_SEXO = "F"
+				TXT_SENHA = "S@ndra25" DT_NASCIMENTO = "1996-04-12" TXT_CPF = "276.192.113-57"  ID_ENDERECO = "17"/>
+	<TB_ALUNO ID_USUARIO = "15" TXT_MATRICULA = "20132Y6-RC0501"/>
+	<!-- Usuario id = 16 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Leandro" TXT_SOBRENOME = "Buarque" TXT_APELIDO = "Leo991" TXT_SEXO = "M"
+				TXT_SENHA = "Le@n1990" DT_NASCIMENTO = "1990-11-22" TXT_CPF = "856.306.945-45"  ID_ENDERECO = "18"/>
+	<TB_ALUNO ID_USUARIO = "16" TXT_MATRICULA = "20132Y6-RC0223"/>
+	<!-- Usuario id = 17 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Jorge" TXT_SOBRENOME = "Maciel" TXT_APELIDO = "Jorge333" TXT_SEXO = "M"
+				TXT_SENHA = "J0rge$" DT_NASCIMENTO = "1980-09-13" TXT_CPF = "226.761.121-04"  ID_ENDERECO = "19"/>
+	<TB_ALUNO ID_USUARIO = "17" TXT_MATRICULA = "20132Y6-RC0997"/>
+	<!-- Usuario id = 18 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Ana" TXT_SOBRENOME = "Macedo" TXT_APELIDO = "Ana55" TXT_SEXO = "F"
+				TXT_SENHA = "@nA82" DT_NASCIMENTO = "1982-10-04" TXT_CPF = "183.799.982-19"  ID_ENDERECO = "20"/>
+	<TB_ALUNO ID_USUARIO = "18" TXT_MATRICULA = "20132Y6-RC0435"/>
+	<!-- Usuario id = 19 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Ana" TXT_SOBRENOME = "Lima" TXT_APELIDO = "Ana" TXT_SEXO = "F"
+				TXT_SENHA = "Aninh@88" DT_NASCIMENTO = "1988-11-11" TXT_CPF = "602.669.598-22"  ID_ENDERECO = "21"/>
+	<TB_ALUNO ID_USUARIO = "19" TXT_MATRICULA = "20132Y6-RC0665"/>
+	<!-- Usuario id = 20 (aluno) -->
+    <TB_USUARIO DISC_USUARIO = "AL" TXT_NOME = "Julio" TXT_SOBRENOME = "Barbosa" TXT_APELIDO = "Julio21" TXT_SEXO = "M"
+				TXT_SENHA = "Juli0$" DT_NASCIMENTO = "1978-12-21" TXT_CPF = "935.868.763-00"  ID_ENDERECO = "22"/>				
+	<TB_ALUNO ID_USUARIO = "20" TXT_MATRICULA = "20132Y6-RC0447"/>
+	<!-- Usuario id = 21 (administrador) -->
+    <TB_USUARIO DISC_USUARIO = "AD" TXT_NOME = "João" TXT_SOBRENOME = "Domingos" TXT_APELIDO = "Domingos" TXT_SEXO = "M"
+				TXT_SENHA = "Domingo$99" DT_NASCIMENTO = "1966-03-21" TXT_CPF = "637.353.820-61"  ID_ENDERECO = "23"/>
+	<TB_ADMINISTRADOR ID_USUARIO = "21"/>
+	
+	<!-- Email id = 1 -->    
+	<TB_EMAIL TXT_EMAIL = "ifpe@edu.gov.br" ID_INSTITUICAO = "1"/>
+	<!-- Email id = 2 -->    
+	<TB_EMAIL TXT_EMAIL = "reitoriaifpe@edu.gov.br" ID_INSTITUICAO = "1"/>
+	<!-- Email id = 3 -->    
+	<TB_EMAIL TXT_EMAIL = "ufpe@edu.gov.br" ID_INSTITUICAO = "2"/>
+	<!-- Email id = 4 -->    
+	<TB_EMAIL TXT_EMAIL = "eado@a.recife.ifpe.edu.br" ID_USUARIO = "1" />
+	<!-- Email id = 5 -->    
+	<TB_EMAIL TXT_EMAIL = "sad@a.recife.ifpe.edu.br" ID_USUARIO = "2" />
+	<!-- Email id = 6 -->    
+	<TB_EMAIL TXT_EMAIL = "ema@a.recife.ifpe.edu.br" ID_USUARIO = "3" />
+	<!-- Email id = 7 -->    
+	<TB_EMAIL TXT_EMAIL = "imk@a.recife.ifpe.edu.br" ID_USUARIO = "4" />
+	<!-- Email id = 8 -->    
+	<TB_EMAIL TXT_EMAIL = "sma@a.recife.ifpe.edu.br" ID_USUARIO = "5" />
+	<!-- Email id = 9 -->    
+	<TB_EMAIL TXT_EMAIL = "ida@a.recife.ifpe.edu.br" ID_USUARIO = "6" />
+	<!-- Email id = 10 -->    
+	<TB_EMAIL TXT_EMAIL = "gls@a.recife.ifpe.edu.br" ID_USUARIO = "7" />
+	<!-- Email id = 11 -->    
+	<TB_EMAIL TXT_EMAIL = "guiga@yahoo.com.br" ID_USUARIO = "7" />
+	<!-- Email id = 12 -->    
+	<TB_EMAIL TXT_EMAIL = "kas@a.recife.ifpe.edu.br" ID_USUARIO = "8" />
+	<!-- Email id = 13 -->    
+	<TB_EMAIL TXT_EMAIL = "sakarina@hotmail.com" ID_USUARIO = "8" />
+	<!-- Email id = 14 -->    
+	<TB_EMAIL TXT_EMAIL = "rta@a.recife.ifpe.edu.br" ID_USUARIO = "9" />
+	<!-- Email id = 15 -->    
+	<TB_EMAIL TXT_EMAIL = "masc@recife.ifpe.edu.br" ID_USUARIO = "10" />
+	<!-- Email id = 16 -->    
+	<TB_EMAIL TXT_EMAIL = "darthvader@gmail.com" ID_USUARIO = "10" />
+	<!-- Email id = 17 -->    
+	<TB_EMAIL TXT_EMAIL = "genial@ufpe.edu.br" ID_USUARIO = "11" />
+	<!-- Email id = 18 -->    
+	<TB_EMAIL TXT_EMAIL = "aaf@recife.ifpe.edu.br" ID_USUARIO = "12" />
+	<!-- Email id = 19 -->    
+	<TB_EMAIL TXT_EMAIL = "mas@a.recife.ifpe.edu.br" ID_USUARIO = "13" />
+	<!-- Email id = 20 -->    
+	<TB_EMAIL TXT_EMAIL = "asr@a.recife.ifpe.edu.br" ID_USUARIO = "14" />
+	<!-- Email id = 21 -->    
+	<TB_EMAIL TXT_EMAIL = "sandra.passarinho@a.ufpe.edu.br" ID_USUARIO = "15" />
+	<!-- Email id = 22 -->    
+	<TB_EMAIL TXT_EMAIL = "leandro.buarque@a.ufpe.edu.br" ID_USUARIO = "16" />
+	<!-- Email id = 23 -->    
+	<TB_EMAIL TXT_EMAIL = "jorge.maciel@a.ufpe.edu.br" ID_USUARIO = "17" />
+	<!-- Email id = 24 -->    
+	<TB_EMAIL TXT_EMAIL = "ana.macedof@a.ufpe.edu.br" ID_USUARIO = "18" />
+	<!-- Email id = 25 -->    
+	<TB_EMAIL TXT_EMAIL = "ana.lima@a.ufpe.edu.br" ID_USUARIO = "19" />
+	<!-- Email id = 26 -->    
+	<TB_EMAIL TXT_EMAIL = "analima25@hotmail.com" ID_USUARIO = "19" />
+	<!-- Email id = 27 -->    
+	<TB_EMAIL TXT_EMAIL = "julio.barbosa@a.ufpe.edu.br" ID_USUARIO = "20" />
+		
+		
+	<!-- Fone id = 1 -->    
+	<TB_FONE TXT_FONE = "(81)3321-7860" ID_INSTITUICAO = "1"/>
+	<!-- Fone id = 2 -->    
+	<TB_FONE TXT_FONE = "(81)3321-7861" ID_INSTITUICAO = "1"/>
+	<!-- Fone id = 3 -->    
+	<TB_FONE TXT_FONE = "(81)3321-8881" ID_INSTITUICAO = "2"/>
+	<!-- Fone id = 4 -->    
+	<TB_FONE TXT_FONE = "(81)98812-2345" ID_USUARIO = "1" />
+	<!-- Fone id = 5 -->    
+	<TB_FONE TXT_FONE = "(81)99967-1235" ID_USUARIO = "1" />
+	<!-- Fone id = 6 -->    
+	<TB_FONE TXT_FONE = "(81)98388-2343" ID_USUARIO = "2" />
+	<!-- Fone id = 7 -->    
+	<TB_FONE TXT_FONE = "(81)98803-9019" ID_USUARIO = "3" />
+	<!-- Fone id = 8 -->    
+	<TB_FONE TXT_FONE = "(81)98677-2020" ID_USUARIO = "4" />
+	<!-- Fone id = 9 -->    
+	<TB_FONE TXT_FONE = "(81)99245-2345" ID_USUARIO = "5" />
+	<!-- Fone id = 10 -->    
+	<TB_FONE TXT_FONE = "(81)99678-4455" ID_USUARIO = "6" />
+	<!-- Fone id = 11 -->    
+	<TB_FONE TXT_FONE = "(81)98765-2245" ID_USUARIO = "6" />
+	<!-- Fone id = 12 -->    
+	<TB_FONE TXT_FONE = "(81)98122-4024" ID_USUARIO = "7" />
+	<!-- Fone id = 13 -->    
+	<TB_FONE TXT_FONE = "(81)98334-2300" ID_USUARIO = "8" />
+	<!-- Fone id = 14 -->    
+	<TB_FONE TXT_FONE = "(81)99978-2366" ID_USUARIO = "9" />
+	<!-- Fone id = 15 -->    
+	<TB_FONE TXT_FONE = "(81)99966-1477" ID_USUARIO = "10" />
+	<!-- Fone id = 16 -->    
+	<TB_FONE TXT_FONE = "(81)99344-0045" ID_USUARIO = "11" />
+	<!-- Fone id = 17 -->    
+	<TB_FONE TXT_FONE = "(81)98344-0178" ID_USUARIO = "12" />
+	<!-- Fone id = 18 -->    
+	<TB_FONE TXT_FONE = "(81)99967-0091" ID_USUARIO = "13" />
+	<!-- Fone id = 19 -->    
+	<TB_FONE TXT_FONE = "(81)98877-8434" ID_USUARIO = "14" />
+	<!-- Fone id = 20 -->    
+	<TB_FONE TXT_FONE = "(81)3326-1224" ID_USUARIO = "15" />
+	<!-- Fone id = 21 -->    
+	<TB_FONE TXT_FONE = "(81)98822-8444" ID_USUARIO = "15" />
+	<!-- Fone id = 22 -->    
+	<TB_FONE TXT_FONE = "(81)99008-3455" ID_USUARIO = "16" />
+	<!-- Fone id = 23 -->    
+	<TB_FONE TXT_FONE = "(81)3449-1443" ID_USUARIO = "17" />
+	<!-- Fone id = 24 -->    
+	<TB_FONE TXT_FONE = "(81)98677-1222" ID_USUARIO = "18" />
+	<!-- Fone id = 25 -->    
+	<TB_FONE TXT_FONE = "(81)99166-1004" ID_USUARIO = "18" />
+	<!-- Fone id = 26 -->    
+	<TB_FONE TXT_FONE = "(81)99773-5647" ID_USUARIO = "19" />
+	<!-- Fone id = 27 -->    
+	<TB_FONE TXT_FONE = "(81)98595-1444" ID_USUARIO = "20" />
+	<!-- Fone id = 28 -->    
+	<TB_FONE TXT_FONE = "(81)99344-4470" ID_USUARIO = "20" />
+	<!-- Fone id = 29 -->    
+	<TB_FONE TXT_FONE = "(81)3299-2076" ID_USUARIO = "20" />
+	
+	<!-- Curso id = 1 -->    
+	<TB_CURSO TXT_NOME = "Análise e Desenvolvimento de Sistemas" ID_INSTITUICAO = "1"/>
+	<!-- Curso id = 2 -->    
+	<TB_CURSO TXT_NOME = "Ciência da Computação" ID_INSTITUICAO = "2"/>
+	
+	<!-- SalaDeChat id = 1 -->    
+	<TB_SALA_DE_CHAT TXT_DESCRICAO = "Sala de SW Corporativo - docente: Marcos Costa"/>
+	<!-- SalaDeChat id = 2 -->    
+	<TB_SALA_DE_CHAT TXT_DESCRICAO = "Sala de TCC - docente: Aida Ferreira"/>
+	<!-- SalaDeChat id = 3 -->    
+	<TB_SALA_DE_CHAT TXT_DESCRICAO = "Sala de Engenharia de Requisitos - docente: Genival Santos"/>
+	
+	<!-- Disciplina id = 1 -->    
+	<TB_DISCIPLINA TXT_NOME = "Desenvolvimento de Software Corporativo" ID_CURSO = "1" ID_PROFESSOR = "10" ID_SALA_CHAT = "1"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "1"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "2"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "3"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "4"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "5"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "6"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "7"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "8"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "1" ID_ALUNO = "9"/>	
+	<!-- Disciplina id = 2 -->    
+	<TB_DISCIPLINA TXT_NOME = "Orientação de Trabalho de Conclusão de Curso" ID_CURSO = "1" ID_PROFESSOR = "12" ID_SALA_CHAT = "2"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "1"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "2"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "3"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "4"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "5"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "6"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "7"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "8"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "9"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "2" ID_ALUNO = "14"/>
+	<TB_DISCIPLINA_MONITOR ID_DISCIPLINA = "2" ID_ALUNO = "13"/>
+	<!-- Disciplina id = 3 -->    
+	<TB_DISCIPLINA TXT_NOME = "Engenharia de Requisitos" ID_CURSO = "2" ID_PROFESSOR = "11" ID_SALA_CHAT = "3"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "3" ID_ALUNO = "15"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "3" ID_ALUNO = "16"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "3" ID_ALUNO = "17"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "3" ID_ALUNO = "18"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "3" ID_ALUNO = "19"/>
+	<TB_DISCIPLINA_ALUNO ID_DISCIPLINA = "3" ID_ALUNO = "20"/>
+	
+</dataset>

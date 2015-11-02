@@ -19,7 +19,7 @@ public class Email implements Serializable {
     private Long id;
     @NotNull
     @org.hibernate.validator.constraints.Email
-    @Column(name="TXT_EMAIL")
+    @Column(name="TXT_EMAIL", length = 150)
     private String email;
     
     public Email() {

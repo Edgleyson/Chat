@@ -3,16 +3,10 @@ package esse.chat.modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -25,9 +19,6 @@ import org.hibernate.validator.constraints.NotBlank;
 @PrimaryKeyJoinColumn(name="ID_USUARIO", referencedColumnName="ID")
 public class Aluno extends Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
     @NotBlank
     @Size(max = 20)
     @Column(name="TXT_MATRICULA")

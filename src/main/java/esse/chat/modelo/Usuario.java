@@ -2,6 +2,7 @@ package esse.chat.modelo;
 
 import esse.chat.controle.ValidaApelido;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
@@ -55,7 +56,7 @@ public abstract class Usuario implements Serializable {
     @Column(name="TXT_SOBRENOME")
     private String ultimoNome;
     @NotBlank
-    @ValidaApelido
+    @ValidaApelido (message = "{esse.chat.Usuario.apelido}")
     @Size (min=3, max = 10)
     @Column(name="TXT_APELIDO")
     private String apelido;
@@ -88,11 +89,11 @@ public abstract class Usuario implements Serializable {
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
-    private Collection<Email> emails;
+    private Collection<Email> emails = new ArrayList<>();
     @Valid
     @OneToMany(fetch = FetchType.LAZY,cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="ID_USUARIO", referencedColumnName="ID")
-    private Collection<Fone> fones;
+    private Collection<Fone> fones = new ArrayList<>();
 
     public Long getId() {
         return id;

@@ -1,8 +1,6 @@
 package esse.chat.modelo;
 
-import com.sun.javafx.css.Size;
 import java.io.Serializable;
-import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -77,15 +75,5 @@ public class SalaDeChat implements Serializable {
     @Override
     public String toString() {
         return "SalaDeChat{" + "id=" + id + ", descricao=" + descricao + '}';
-    }
-        
-
-
-   
-
-    
-
-    
-    
-    
+    }           
 }

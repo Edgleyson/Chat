@@ -20,7 +20,7 @@ public class Cliente {
         Email email = fabrica.criarEmail();
         Email email2 = fabrica.criarEmail2();
         Fone fone1 = fabrica.criarFone();
-//        Aluno aluno1 = fabrica.criarAluno();
+        Aluno aluno1 = fabrica.criarAluno();
 //        System.out.println(aluno1.getPrimeiroNome());
         Fone fone2 = fabrica.criarFone();
         
@@ -29,11 +29,11 @@ public class Cliente {
         instituicao.adicionaEmail(email2);
         instituicao.adicionaFone(fone1);
         instituicao.adicionaFone(fone2);
-        instituicao.adicionaCurso(null);
+//        instituicao.adicionaCurso(null);
         
         
-//        Long id = InstituicaoDAO.inserirInstituicao(instituicao);
-//        Long newId = AlunoDAO.inserirAluno(aluno1);
+        Long id = InstituicaoDAO.inserirInstituicao(instituicao);
+        Long newId = AlunoDAO.inserirAluno(aluno1);
        
 //        String a = "1";
 //        Long id = Long.parseLong(a);

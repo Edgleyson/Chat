@@ -91,7 +91,7 @@ public class FabricaDeInstituicao {
         } catch (ParseException ex) {
             Logger.getLogger(FabricaDeInstituicao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        aluno.setSenha("edde");
+        aluno.setSenha("Ed@68");
         aluno.setSexo("M");
         return aluno;
         

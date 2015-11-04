@@ -40,7 +40,7 @@ public class Endereco implements Serializable {
     @Column(name="TXT_BAIRRO")
     private String bairro;
     @NotNull
-    @Pattern(regexp = "[0-9]{5}-[0-9]{3}", message = "Cep Obrigatorio")
+    @Pattern(regexp = "[0-9]{5}-[0-9]{3}", message = "{esse.chat.modelo.Endereço.cep}")
     @Column(name="TXT_CEP")
     private String cep;
     @NotBlank
@@ -48,7 +48,7 @@ public class Endereco implements Serializable {
     @Column(name="TXT_CIDADE")
     private String cidade;
     @NotBlank
-    @ValidaEstado
+    @ValidaEstado(message = "{esse.chat.modelo.Endereço.estado}")
     @Size(min = 2, max = 2)
     @Column(name="TXT_ESTADO")
     private String estado;

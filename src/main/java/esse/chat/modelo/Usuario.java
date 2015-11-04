@@ -47,28 +47,28 @@ public abstract class Usuario implements Serializable {
     private Long id;
     @NotBlank
     @Size(max = 30)
-    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{esse.chat.Usuario.primeiroNome}")
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{esse.chat.modelo.Usuario.primeiroNome}")
     @Column(name="TXT_NOME")
     private String primeiroNome;
     @NotBlank
     @Size(max = 30)
-    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{esse.chat.Usuario.ultimoNome}")
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "{esse.chat.modelo.Usuario.ultimoNome}")
     @Column(name="TXT_SOBRENOME")
     private String ultimoNome;
     @NotBlank
-    @ValidaApelido (message = "{esse.chat.Usuario.apelido}")
+    @ValidaApelido (message = "{esse.chat.modelo.Usuario.apelido}")
     @Size (min=3, max = 10)
-    @Column(name="TXT_APELIDO")
+    @Column(name="TXT_APELIDO", unique = true)
     private String apelido;
     @NotBlank 
     @Size (max = 1)
-    @Pattern(regexp = "M|F", message = "{esse.chat.Usuario.sexo}")
+    @Pattern(regexp = "M|F", message = "{esse.chat.modelo.Usuario.sexo}")
     @Column(name="TXT_SEXO")
     private String sexo;
     @NotBlank 
     @Size (min = 4, max = 10)
     @Pattern(regexp = "((?=.*\\p{Digit})(?=.*\\p{Lower})(?=.*\\p{Upper})(?=.*\\p{Punct}).{4,10})", 
-            message = "{esse.chat.Usuario.senha}")
+            message = "{esse.chat.modelo.Usuario.senha}")
     @Column(name="TXT_SENHA")
     private String senha;
     @NotNull

@@ -217,7 +217,7 @@ public class JpqlTest {
         query.setParameter("apelido", "Edmilson");
         Usuario usuario = query.getSingleResult();
         Email email = new Email();
-        email.setEmail("ema.recife.ifpe.edu.br");//inválido
+        email.setEmail("ema@recife.ifpe.edu.br");//inválido
         usuario.adicionaEmail(email);
     }
     
@@ -228,9 +228,84 @@ public class JpqlTest {
         query.setParameter("apelido", "Edmilson");
         Usuario usuario = query.getSingleResult();
         Email email = new Email();
-        email.setEmail("ema@a.recife.ifpe.edu.br");
+        email.setEmail("ema");
         usuario.adicionaEmail(email);
     }
-
     
-}
+    @Test //Instituição, Email, Fone, Endereço
+    public void t07_criarInstituicaoValida() {
+        Email email = new Email();
+        String str = "fso@fso.com.br";
+        email.setEmail(str);
+        Fone fone = new Fone();
+        fone.setFone("(81)3031-1135");
+        Instituicao instituicao  = new Instituicao();
+        instituicao.setNome("Faculdade Salgado de Oliveira");
+        instituicao.setSigla("FSO");
+        instituicao.setCnpj("12.493.133/0001-26");
+        Endereco end = instituicao.criarEndereco();
+        end.setLogradouro("Av Caxanga");
+        end.setNumero("428");
+        end.setComplemento("");
+        end.setBairro("Madalena");
+        end.setCep("50610-230");
+        end.setCidade("Recife");
+        end.setEstado("PE");
+        
+        instituicao.adicionaEmail(email);
+        instituicao.adicionaFone(fone);
+        
+        
+        em.persist(instituicao);
+        assertNotNull(instituicao.getId());
+        assertNotNull(email.getId());
+        assertNotNull(fone.getId());
+       
+    }
+@Test //Instituição, Email, Fone, Endereço
+    public void t06_criarInstituicaoInvalida() {
+        Instituicao instituicao = null;
+        try{ 
+         instituicao  = new Instituicao();
+        instituicao.setNome("");//Invalido
+        instituicao.setSigla("Faculdade Salgado de Oliveira");//Invalido
+        instituicao.setCnpj("12.493.133/0001-28");//Invalido
+        em.persist(instituicao);
+        assertNotNull(instituicao.getId());
+       } catch (ConstraintViolationException ex) {
+            Logger.getGlobal().info(ex.getMessage());
+
+            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
+
+            for (ConstraintViolation violation : constraintViolations) {
+                Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
+            }
+       assertEquals(3, constraintViolations.size());
+            assertNull(instituicao.getId());
+        }
+       
+    }
+        @Test //Instituição, Fone
+        public void t08_inserirFoneValido() {
+        Logger.getGlobal().log(Level.INFO, "t08_inserirFonevalido");
+        TypedQuery<Instituicao> query = em.createQuery("SELECT i FROM Instituicao i WHERE i.sigla like :sigla", Instituicao.class);
+        query.setParameter("sigla", "FSO");
+        Instituicao instituicao = query.getSingleResult();
+        Fone fone = new Fone();
+        fone.setFone("(81)3088-4330");
+        instituicao.adicionaFone(fone);
+    }
+        
+        @Test //Instituição, Fone
+        public void t09_inserirFoneInvalido() {
+        Logger.getGlobal().log(Level.INFO, "t09_inserirFoneInvalido");
+        TypedQuery<Instituicao> query = em.createQuery("SELECT i FROM Instituicao i WHERE i.sigla like :sigla", Instituicao.class);
+        query.setParameter("sigla", "FSO");
+        Instituicao instituicao = query.getSingleResult();
+       
+        Fone fone = new Fone();
+        fone.setFone("(81)3031-1135");// invalido
+        instituicao.adicionaFone(fone);
+         }
+       
+    }

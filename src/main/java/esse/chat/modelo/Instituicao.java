@@ -33,7 +33,7 @@ public class Instituicao implements Serializable {
     private String nome;
     @NotNull
     @Size (max = 10)
-    @Column(name="TXT_SIGLA")
+    @Column(name="TXT_SIGLA", unique = true)
     private String sigla;
     @NotNull
     @CNPJ
@@ -97,6 +97,11 @@ public class Instituicao implements Serializable {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+    
+    public Endereco criarEndereco() {
+        this.setEndereco(new Endereco());
+        return getEndereco();
+    }
 
     public Collection<Curso> getCursos() {
         return cursos;
@@ -105,6 +110,7 @@ public class Instituicao implements Serializable {
     public void setCursos(Collection<Curso> cursos) {
         for (Curso curso : cursos) {
             this.adicionaCurso(curso);
+            curso.setInstituicao(this);
         }
     }
     

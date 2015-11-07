@@ -1,6 +1,7 @@
 package esse.chat.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -40,6 +41,7 @@ public class Curso implements Serializable {
     private Collection<Disciplina> disciplinas;
 
     public Curso() {
+        this.disciplinas = new ArrayList<>();
     }
 
     public Long getId() {
@@ -70,7 +72,7 @@ public class Curso implements Serializable {
         return disciplinas;
     }
     
-    public void setAlunos(Collection<Disciplina> disciplinas) {
+    public void setDisciplinas(Collection<Disciplina> disciplinas) {
         for (Disciplina disciplina : disciplinas) {
             this.adicionaDisciplina(disciplina);
         }

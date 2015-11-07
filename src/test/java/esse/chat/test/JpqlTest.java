@@ -1,14 +1,13 @@
 package esse.chat.test;
 
-
 import esse.chat.Cliente.FabricaDeInstituicao;
 import esse.chat.modelo.*;
-import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,8 +18,6 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import javax.validation.Validation;
-import javax.validation.Validator;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
@@ -32,7 +29,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
-
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class JpqlTest {
@@ -91,18 +87,17 @@ public class JpqlTest {
         }
     }
 
-    
     @Test //Usuario, Aluno, Email, Fone, Endereço
     public void t01_criarAlunoValido() {
         Email email = new Email();
         String str = "esa@a.recife.ifpe.edu.br";
         email.setEmail(str);
-        
+
         Fone fone = new Fone();
         fone.setFone("(81)3321-7876");
         Fone fone2 = new Fone();
         fone2.setFone("(81)98876-4006");
-        
+
         Aluno aluno = new Aluno();
         aluno.setPrimeiroNome("Edmilson");
         aluno.setUltimoNome("Araujo");
@@ -126,25 +121,23 @@ public class JpqlTest {
         end.setCep("50990-060");
         end.setCidade("Recife");
         end.setEstado("PE");
-        
+
         aluno.adicionaEmail(email);
         aluno.adicionaFone(fone);
         aluno.adicionaFone(fone2);
-        
+
         em.persist(aluno);
         assertNotNull(aluno.getId());
         assertNotNull(email.getId());
         assertNotNull(fone.getId());
         assertNotNull(fone2.getId());
     }
+
     @Test //Usuario/Aluno inválido
     public void t02_criarAlunoInvalido() throws ParseException {
         Aluno aluno = null;
         DateFormat f = DateFormat.getDateInstance();
         try {
-//            fone = new Fone();
-//            fone.setFone("(81)9.8821.7866");//inválido
-            
             aluno = new Aluno();
             aluno.setPrimeiroNome("EDNELSON");//inválido
             aluno.setUltimoNome("araujo");//inválido
@@ -170,7 +163,7 @@ public class JpqlTest {
             assertNull(aluno.getId());
         }
     }
-    
+
     @Test //Aluno válido com Endereço inválido
     public void t03_inserirEnderecoInvalido() throws ParseException {
         Aluno aluno = null;
@@ -209,7 +202,7 @@ public class JpqlTest {
             assertNull(aluno.getId());
         }
     }
-    
+
     @Test //Aluno, Email
     public void t04_inserirEmailInvalido() {
         Logger.getGlobal().log(Level.INFO, "t04_inserirEmailInvalido");
@@ -217,10 +210,10 @@ public class JpqlTest {
         query.setParameter("apelido", "Edmilson");
         Usuario usuario = query.getSingleResult();
         Email email = new Email();
-        email.setEmail("ema@recife.ifpe.edu.br");//inválido
+        email.setEmail("ema.recife.ifpe.edu.br");//inválido
         usuario.adicionaEmail(email);
     }
-    
+
     @Test //Aluno, Email
     public void t05_inserirEmailValido() {
         Logger.getGlobal().log(Level.INFO, "t05_inserirEmailInvalido");
@@ -228,21 +221,24 @@ public class JpqlTest {
         query.setParameter("apelido", "Edmilson");
         Usuario usuario = query.getSingleResult();
         Email email = new Email();
-        email.setEmail("ema");
+        email.setEmail("ema@recife.ifpe.edu.br");
         usuario.adicionaEmail(email);
     }
-    
+
     @Test //Instituição, Email, Fone, Endereço
     public void t07_criarInstituicaoValida() {
         Email email = new Email();
         String str = "fso@fso.com.br";
         email.setEmail(str);
+
         Fone fone = new Fone();
         fone.setFone("(81)3031-1135");
-        Instituicao instituicao  = new Instituicao();
+
+        Instituicao instituicao = new Instituicao();
         instituicao.setNome("Faculdade Salgado de Oliveira");
         instituicao.setSigla("FSO");
         instituicao.setCnpj("12.493.133/0001-26");
+
         Endereco end = instituicao.criarEndereco();
         end.setLogradouro("Av Caxanga");
         end.setNumero("428");
@@ -251,28 +247,28 @@ public class JpqlTest {
         end.setCep("50610-230");
         end.setCidade("Recife");
         end.setEstado("PE");
-        
+
         instituicao.adicionaEmail(email);
         instituicao.adicionaFone(fone);
-        
-        
+
         em.persist(instituicao);
         assertNotNull(instituicao.getId());
         assertNotNull(email.getId());
         assertNotNull(fone.getId());
-       
+
     }
-@Test //Instituição, Email, Fone, Endereço
+
+    @Test //Instituição
     public void t06_criarInstituicaoInvalida() {
         Instituicao instituicao = null;
-        try{ 
-         instituicao  = new Instituicao();
-        instituicao.setNome("");//Invalido
-        instituicao.setSigla("Faculdade Salgado de Oliveira");//Invalido
-        instituicao.setCnpj("12.493.133/0001-28");//Invalido
-        em.persist(instituicao);
-        assertNotNull(instituicao.getId());
-       } catch (ConstraintViolationException ex) {
+        try {
+            instituicao = new Instituicao();
+            instituicao.setNome("");//Invalido
+            instituicao.setSigla("Faculdade Salgado de Oliveira");//Invalido
+            instituicao.setCnpj("12.493.133/0001-28");//Invalido
+            em.persist(instituicao);
+            assertNotNull(instituicao.getId());
+        } catch (ConstraintViolationException ex) {
             Logger.getGlobal().info(ex.getMessage());
 
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
@@ -280,13 +276,14 @@ public class JpqlTest {
             for (ConstraintViolation violation : constraintViolations) {
                 Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
             }
-       assertEquals(3, constraintViolations.size());
+            assertEquals(3, constraintViolations.size());
             assertNull(instituicao.getId());
         }
-       
+
     }
-        @Test //Instituição, Fone
-        public void t08_inserirFoneValido() {
+
+    @Test //Instituição, Fone
+    public void t08_inserirFoneValido() {
         Logger.getGlobal().log(Level.INFO, "t08_inserirFonevalido");
         TypedQuery<Instituicao> query = em.createQuery("SELECT i FROM Instituicao i WHERE i.sigla like :sigla", Instituicao.class);
         query.setParameter("sigla", "FSO");
@@ -295,17 +292,76 @@ public class JpqlTest {
         fone.setFone("(81)3088-4330");
         instituicao.adicionaFone(fone);
     }
-        
-        @Test //Instituição, Fone
-        public void t09_inserirFoneInvalido() {
+
+    @Test //Instituição, Fone
+    public void t09_inserirFoneInvalido() {
         Logger.getGlobal().log(Level.INFO, "t09_inserirFoneInvalido");
         TypedQuery<Instituicao> query = em.createQuery("SELECT i FROM Instituicao i WHERE i.sigla like :sigla", Instituicao.class);
         query.setParameter("sigla", "FSO");
         Instituicao instituicao = query.getSingleResult();
-       
+
         Fone fone = new Fone();
-        fone.setFone("(81)3031-1135");// invalido
+        fone.setFone("(01)3031-1135");// invalido
         instituicao.adicionaFone(fone);
-         }
-       
     }
+    
+    @Test //Instituição, Curso
+    public void t10_inserirCursoInvalido() {
+        Logger.getGlobal().log(Level.INFO, "t10_inserirCursoInvalido");
+        TypedQuery<Instituicao> query = em.createQuery("SELECT i FROM Instituicao i WHERE i.sigla like :sigla", Instituicao.class);
+        query.setParameter("sigla", "FSO");
+        Instituicao instituicao = query.getSingleResult();
+        Curso cursoSuperior = new Curso();
+        instituicao.adicionaCurso(cursoSuperior);//curso inválido - null
+    }
+
+    @Test //Instituição, Curso
+    public void t11_inserirCursoValido() {
+        Logger.getGlobal().log(Level.INFO, "t11_inserirCursoValido");
+        TypedQuery<Instituicao> query = em.createQuery("SELECT i FROM Instituicao i WHERE i.sigla like :sigla", Instituicao.class);
+        query.setParameter("sigla", "FSO");
+        Instituicao instituicao = query.getSingleResult();
+        Curso cursoSuperior = new Curso();
+        cursoSuperior.setNome("Análise de Sistemas");
+        instituicao.adicionaCurso(cursoSuperior);
+    }
+    
+    @Test //Curso, Disciplina
+    public void t12_inserirDisciplinaInvalida() {
+        Logger.getGlobal().log(Level.INFO, "t10_inserirCursoInvalido");
+        TypedQuery<Curso> query = em.createQuery("SELECT c FROM Curso c WHERE c.instituicao.sigla like ?1 and c.nome like ?2", Curso.class);
+        query.setParameter(1, "FSO");
+        query.setParameter(2, "Análise de Sistemas");
+        Curso cursoSuperior = query.getSingleResult();
+        Disciplina disciplina = new Disciplina();
+        cursoSuperior.adicionaDisciplina(disciplina);//Disciplina inválida - null
+    }
+    
+    @Test //Curso, Disciplina, Instituição
+    public void t13_inserirDisciplinaValida() {
+        Logger.getGlobal().log(Level.INFO, "t13_inserirDisciplinaValida");
+        TypedQuery<Curso> query = em.createQuery("SELECT c FROM Curso c WHERE c.instituicao.sigla like ?1 and c.nome like ?2", Curso.class);
+        query.setParameter(1, "FSO");
+        query.setParameter(2, "Análise de Sistemas");
+        Curso cursoSuperior = query.getSingleResult();
+        Disciplina d1 = new Disciplina();
+        d1.setNome("Iniciação à Informática");
+        Disciplina d2 = new Disciplina();
+        d2.setNome("Lógica de Programação");
+        Disciplina d3 = new Disciplina();
+        d3.setNome("Inglês I");
+        Disciplina d4 = new Disciplina();
+        d4.setNome("Iniciação à Programação");
+        Disciplina d5 = new Disciplina();
+        d5.setNome("Ética");
+        Collection<Disciplina> disciplinas = new ArrayList<>();        
+            disciplinas.add(d1);
+            disciplinas.add(d2);
+            disciplinas.add(d3);
+            disciplinas.add(d4);
+            disciplinas.add(d5);
+        cursoSuperior.setDisciplinas(disciplinas);
+    }
+
+
+}

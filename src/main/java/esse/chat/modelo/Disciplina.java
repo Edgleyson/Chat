@@ -108,20 +108,21 @@ public class Disciplina implements Serializable {
         }
     }
     
-    public void adicionaAluno(Aluno aluno){
-        if (!this.alunos.contains(aluno))
-            if(aluno.adicionaDisciplina(this)){
-                alunos.add(aluno);
-            }
+    public void adicionaAluno(Aluno aluno) {
+        if (!this.alunos.contains(aluno)) {
+            alunos.add(aluno);
+            aluno.adicionaDisciplina(this);
+        }
     }
     
-    public void removeAluno(Aluno aluno){
+    public void removeAluno(Aluno aluno) {
         if (alunos != null) {
-            if(aluno.removeDisciplina(this)){
+            {
                 alunos.remove(aluno);
+                aluno.removeDisciplina(this);
             }
         }
-    } 
+    }
     
     public Collection<Aluno> getMonitores() {
         return monitores;
@@ -134,8 +135,8 @@ public class Disciplina implements Serializable {
     }
     
     public void adicionaMonitor(Aluno aluno){
-        if (!this.alunos.contains(aluno))
-            alunos.add(aluno);
+        if (!this.monitores.contains(aluno))
+            monitores.add(aluno);
     }
     
     public void removeMonitor(Aluno aluno){

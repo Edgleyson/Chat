@@ -68,6 +68,7 @@ public class Disciplina implements Serializable {
     public SalaDeChat getChat(){
         return chat;
     }
+    
     public void setChat(SalaDeChat chat){
         this.chat = chat;
         this.chat.setDisciplina(this);
@@ -87,7 +88,6 @@ public class Disciplina implements Serializable {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
-        this.professor.adicionaDisciplina(this);
     }
     
     public Curso getCurso() {

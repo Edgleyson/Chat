@@ -42,6 +42,7 @@ public class Professor extends Usuario implements Serializable {
     public void adicionaDisciplina(Disciplina disciplina){
         if (!this.disciplinas.contains(disciplina))
             disciplinas.add(disciplina);
+        disciplina.setProfessor(this);
     }
     
     public void removeDisciplina(Disciplina disciplina){

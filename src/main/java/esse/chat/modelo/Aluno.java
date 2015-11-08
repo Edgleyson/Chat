@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -17,6 +19,12 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name="TB_ALUNO")
 @DiscriminatorValue(value="AL")
 @PrimaryKeyJoinColumn(name="ID_USUARIO", referencedColumnName="ID")
+@NamedQueries(
+        @NamedQuery(
+                name = "Aluno.PorMatricula",
+                query = "SELECT a FROM Aluno a WHERE a.matricula LIKE :matricula ORDER BY a.primeiroNome"
+        )
+)
 public class Aluno extends Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @NotBlank
@@ -44,42 +52,24 @@ public class Aluno extends Usuario implements Serializable {
     public Collection<Disciplina> getDisciplinas() {
         return disciplinas;
     }
+    
+    public void setDisciplinas(Collection<Disciplina> disciplinas){
+        for (Disciplina disciplina : disciplinas) {
+            this.adicionaDisciplina(disciplina);
+        }
+    }
        
-    public boolean adicionaDisciplina(Disciplina disciplina){
+    public void adicionaDisciplina(Disciplina disciplina){
         if (!this.disciplinas.contains(disciplina)){
-            return disciplinas.add(disciplina);
-        }            
-        return false;
+            disciplinas.add(disciplina);
+        } 
     }
     
-    public boolean removeDisciplina(Disciplina disciplina){
+    public void removeDisciplina(Disciplina disciplina){
         if (disciplinas != null) {
-            return disciplinas.remove(disciplina);
+            disciplinas.remove(disciplina);
         }
-        return false;
     }
-
-//    @Override
-//    public int hashCode() {
-//        int hash = 0;
-//        hash += (id != null ? id.hashCode() : 0);
-//        return hash;
-//    }
-
-//    @Override
-//    public boolean equals(Object object) {
-//        if (!(object instanceof Aluno)) {
-//            return false;
-//        }
-//        Aluno other = (Aluno) object;
-//        if ((id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-//            return false;
-//        }else if (this.id == null && other.id == null) {
-//            return this.matricula.equals(other.matricula);
-//        }
-//        
-//        return true;
-//    }
 
     @Override
     public String toString() {
